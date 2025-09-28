@@ -1,3 +1,3 @@
 #+TITLE: home
-welcome .
-see [[file:about.html][about]].
+	welcome .
+[[file:about.html][about	]]
