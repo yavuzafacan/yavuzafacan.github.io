@@ -20,18 +20,12 @@
 ;;; Code:
 
 ;; -*- mode: emacs-lisp; lexical-binding: t; -*-
+
+;; publish.el (replace the head settings)
 (require 'ox-publish)
-
-(setq org-html-head-include-default-style nil)
-(setq org-html-head-include-scripts nil)
-(setq org-html-head "<link rel=\"stylesheet\" href=\"/assets/style.css\" />")
-
-;; Remove footer/date/creator globally
-(setq org-html-postamble nil)
-(setq org-export-with-author nil)
-(setq org-export-with-date nil)
-(setq org-export-creator-string nil)  ;; suppress “Created by …”
-
+(setq org-html-head-include-default-style t)   ;; use Org’s defaults
+(setq org-html-head-include-scripts t)
+(setq org-html-head nil)                       ;; no custom stylesheet
 
 (setq org-publish-project-alist
       '(("site-org"
@@ -48,7 +42,6 @@
          :recursive t
          :publishing-function org-publish-attachment)
         ("site" :components ("site-org" "assets"))))
-
 (org-publish "site" t)
 
 
