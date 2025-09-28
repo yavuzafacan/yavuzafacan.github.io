@@ -32,6 +32,11 @@
 (setq org-export-with-date t)        ;; needed so %C expands
 (setq org-export-creator-string nil) ;; suppress “Created by …”
 
+(setq org-html-head-include-default-style nil)
+(setq org-html-head-include-scripts nil)
+(setq org-html-head nil)
+
+
 (setq org-publish-project-alist
       '(("site-org"
          :base-directory "org"
