@@ -22,10 +22,17 @@
 ;; -*- mode: emacs-lisp; lexical-binding: t; -*-
 
 ;; publish.el (replace the head settings)
+;; -*- mode: emacs-lisp; lexical-binding: t; -*-
 (require 'ox-publish)
-(setq org-html-head-include-default-style t)   ;; use Org’s defaults
-(setq org-html-head-include-scripts t)
-(setq org-html-head nil)                       ;; no custom stylesheet
+
+(setq org-html-head-include-default-style nil)
+(setq org-html-head-include-scripts nil)
+(setq org-html-head
+      "<style>
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
+</style>")
 
 (setq org-publish-project-alist
       '(("site-org"
@@ -34,7 +41,9 @@
          :publishing-directory "."
          :recursive t
          :publishing-function org-html-publish-to-html
-         :with-author nil :with-toc t :section-numbers t)
+         :with-author nil
+         :with-toc t
+         :section-numbers t)
         ("assets"
          :base-directory "assets"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|svg"
@@ -42,7 +51,9 @@
          :recursive t
          :publishing-function org-publish-attachment)
         ("site" :components ("site-org" "assets"))))
+
 (org-publish "site" t)
+
 
 
 (provide 'publish)
