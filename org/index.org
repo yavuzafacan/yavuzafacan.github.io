@@ -1,0 +1,2 @@
+#+TITLE: Home
+Welcome. See [[file:about.html][About]].
