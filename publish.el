@@ -26,6 +26,13 @@
 (setq org-html-head-include-scripts nil)
 (setq org-html-head "<link rel=\"stylesheet\" href=\"/assets/style.css\" />")
 
+;; Remove footer/date/creator globally
+(setq org-html-postamble nil)
+(setq org-export-with-author nil)
+(setq org-export-with-date nil)
+(setq org-export-creator-string nil)  ;; suppress “Created by …”
+
+
 (setq org-publish-project-alist
       '(("site-org"
          :base-directory "org"
