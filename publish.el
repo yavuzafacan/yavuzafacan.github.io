@@ -25,14 +25,12 @@
 ;; -*- mode: emacs-lisp; lexical-binding: t; -*-
 (require 'ox-publish)
 
-(setq org-html-head-include-default-style nil)
-(setq org-html-head-include-scripts nil)
-(setq org-html-head
-      "<style>
-body {
-  font-family: 'Times New Roman', Times, serif;
-}
-</style>")
+(setq org-html-postamble-format
+      '(("en" "<p class=\"footer\">y.s.a, updated: %C</p>")))
+(setq org-html-postamble t)          ;; enable custom footer
+(setq org-export-with-author nil)    ;; don't auto-insert author
+(setq org-export-with-date t)        ;; needed so %C expands
+(setq org-export-creator-string nil) ;; suppress “Created by …”
 
 (setq org-publish-project-alist
       '(("site-org"
@@ -41,9 +39,7 @@ body {
          :publishing-directory "."
          :recursive t
          :publishing-function org-html-publish-to-html
-         :with-author nil
-         :with-toc t
-         :section-numbers t)
+         :with-author nil :with-toc t :section-numbers t)
         ("assets"
          :base-directory "assets"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|svg"
