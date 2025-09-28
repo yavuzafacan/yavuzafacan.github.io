@@ -1,3 +1,33 @@
-#+TITLE: home
-	welcome .
-[[file:about.html][about	]]
+#+OPTIONS: html-postamble:nil
+
+#+BEGIN_EXPORT html
+<div style="text-align:center; margin-top:2rem;">
+  <!-- Name -->
+  <h1 style="margin-bottom:1rem;">Yavuz Afacan</h1>
+
+  <!-- Photo -->
+  <img src="assets/img/flying_m3.png"
+       alt="portrait"
+       style="display:block;margin:0 auto;max-width:260px;height:auto;">
+
+  <!-- Local time (Hamilton) -->
+  <p id="clock" style="margin-top:1rem;font-style:italic;color:#555;"></p>
+
+  <!-- Links -->
+  <div style="margin-top:1.5rem;">
+    <a href="about.html" style="margin:0 1rem;">about</a>
+    <a href="blog.html" style="margin:0 1rem;">blog</a>
+    <a href="contact.html" style="margin:0 1rem;">contact</a>
+  </div>
+</div>
+
+<script>
+function updateClock() {
+  let options = { timeZone: "America/Toronto", hour: "2-digit", minute: "2-digit", second: "2-digit" };
+  let now = new Date().toLocaleTimeString("en-US", options);
+  document.getElementById("clock").innerText = "Hamilton time: " + now;
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+#+END_EXPORT

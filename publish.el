@@ -23,20 +23,42 @@
 
 ;; publish.el (replace the head settings)
 ;; -*- mode: emacs-lisp; lexical-binding: t; -*-
+;; -*- mode: emacs-lisp; lexical-binding: t; -*-
 (require 'ox-publish)
 
-(setq org-html-postamble-format
-      '(("en" "<p class=\"footer\">y.s.a, updated: %C</p>")))
-(setq org-html-postamble t)          ;; enable custom footer
-(setq org-export-with-author nil)    ;; don't auto-insert author
-(setq org-export-with-date t)        ;; needed so %C expands
-(setq org-export-creator-string nil) ;; suppress “Created by …”
-
+;; disable default styles/scripts
 (setq org-html-head-include-default-style nil)
 (setq org-html-head-include-scripts nil)
-(setq org-html-head nil)
 
+;; inject only Times New Roman font
+(setq org-html-head
+      "<style>
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+</style>")
 
+;; disable table of contents and section numbering
+(setq org-export-with-toc nil)
+(setq org-export-with-section-numbers nil)
+
+;; footer
+(setq org-html-postamble-format
+      '(("en" "<p class=\"footer\">y.s.a, updated: %C</p>")))
+(setq org-html-postamble t)
+(setq org-export-with-author nil)
+(setq org-export-with-date t)
+(setq org-export-creator-string nil)
+
+;; always use relative links
+(setq org-link-file-path-type 'relative)
+
+;; project definition
 (setq org-publish-project-alist
       '(("site-org"
          :base-directory "org"
@@ -44,10 +66,12 @@
          :publishing-directory "."
          :recursive t
          :publishing-function org-html-publish-to-html
-         :with-author nil :with-toc t :section-numbers t)
+         :with-author nil
+         :with-toc nil
+         :section-numbers nil)
         ("assets"
          :base-directory "assets"
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|svg"
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|svg\\|pdf"
          :publishing-directory "assets"
          :recursive t
          :publishing-function org-publish-attachment)

@@ -1,2 +1,5 @@
-#+TITLE: About
-Built with Emacs Org → HTML and GitHub Pages.
+* .
+
+#+BEGIN_EXPORT html
+<p class="footer-note">built with Emacs Org to HTML and Github Pages to Cloudflare</p>
+#+END_EXPORT
