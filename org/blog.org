@@ -1,2 +1,3 @@
 * blog
-Thoughts
+
+[[file:People I Find Inspiring.org][People I Find Inspiring]]
