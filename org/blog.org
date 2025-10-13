@@ -1,5 +1,7 @@
 * blog
 
+[[file:being_the_best_at_your_work.org][Being the Best at Your Work]]
+
 [[file:Reading Week.org][Reading Week]]
 
 [[file:People I Find Inspiring.org][People I Find Inspiring]]
