@@ -1,5 +1,7 @@
 * blog
 
+[[file:my_favorite_word_these_days.org][My Favorite Word These Days]]
+
 [[file:being_the_best_at_your_work.org][Being the Best at Your Work]]
 
 [[file:Reading Week.org][Reading Week]]
