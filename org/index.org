@@ -17,7 +17,6 @@
   <div style="display:flex;justify-content:center;gap:2rem;margin-top:1.5rem;">
     <a href="about.html">about</a>
     <a href="blog.html">blog</a>
-    <a href="contact.html">contact</a>
     <a href="https://thunder-engine-37a.notion.site/Yavuz-Afacan-1720540abe8580aa899dc777b20396d2"
        target="_blank" rel="noopener noreferrer">portfolio</a>
   </div>

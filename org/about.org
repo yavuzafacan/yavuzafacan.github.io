@@ -1,4 +1,13 @@
-* .
+* about
+
+Hello! I'm Yavuz, a Computer Engineering student at McMaster University who likes building things that actually work; whether that’s a cloud-deployed web app, a working PCB, or a machine learning pipeline inside a materials lab.
+
+Right now, I split my time between developing full-stack projects (Next.js, Supabase, Docker, CI/CD) and researching thermoelectric materials using MODEM, a machine learning + design of experiments platform I help optimize in Dr. Mozharivskyj’s group.
+
+I enjoy working end-to-end: writing the code, wiring the hardware, deploying it, debugging it, and making sure it scales. I’m currently looking for co-op roles where I can keep doing exactly that, building useful systems with like minded people!
+
+You can catch me climbing, playing soccer, or optimizing my emacs.
+Shoot me an email: yavuzselimafacan@gmail.com
 
 #+BEGIN_EXPORT html
 <p class="footer-note">built with Emacs Org to HTML and Github Pages to Cloudflare</p>
